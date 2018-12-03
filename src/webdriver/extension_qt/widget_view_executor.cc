@@ -897,22 +897,19 @@ void QWidgetViewCmdExecutor::GetElementText(const ElementId& element, std::strin
         }
     }
 	
-	QTableView *tableView = qobject_cast<QTableView*>(pElement);
-    if (NULL != listView)
-    {
-		QAbstractItemModel *model = tableView->model();
-		if (NULL != model)
-		{
-			QStringList rows;
-			for (int row = 0; row < model->rowCount(); ++row)
-			{
-				QStringList items;
-				for (int col = 0; col < model->columnCount(); ++col)
-					items.append(model->index(row, col).data().toString());
-				rows.append(items.join("\t"));
-			}
-			*element_text = rows.join("\n").toStdString();
-		}
+    QTableView *tableView = qobject_cast<QTableView*>(pElement);
+    if (NULL != listView) {
+        QAbstractItemModel *model = tableView->model();
+        if (NULL != model) {
+            QStringList rows;
+            for (int row = 0; row < model->rowCount(); ++row) {
+                QStringList items;
+                for (int col = 0; col < model->columnCount(); ++col)
+                    items.append(model->index(row, col).data().toString());
+                rows.append(items.join("\t"));
+            }
+            *element_text = rows.join("\n").toStdString();
+        }
         return;
     }
     
