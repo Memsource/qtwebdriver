@@ -898,7 +898,7 @@ void QWidgetViewCmdExecutor::GetElementText(const ElementId& element, std::strin
     }
 	
     QTableView *tableView = qobject_cast<QTableView*>(pElement);
-    if (NULL != listView) {
+    if (NULL != tableView) {
         QAbstractItemModel *model = tableView->model();
         if (NULL != model) {
             QStringList rows;
