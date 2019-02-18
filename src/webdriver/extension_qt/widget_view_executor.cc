@@ -847,6 +847,14 @@ void QWidgetViewCmdExecutor::GetElementText(const ElementId& element, std::strin
         }    
     }
 
+    QString textRepresentation;
+    if (QMetaObject::invokeMethod(pElement, "wdTextRepresentation", Qt::DirectConnection,
+                                  Q_RETURN_ARG(QString, textRepresentation)))
+    {
+        *element_text = textRepresentation.toStdString();
+        return;
+    }
+
     QComboBox *comboBox = qobject_cast<QComboBox*>(pElement);
     if (NULL != comboBox) {
         *element_text = comboBox->currentText().toStdString();
@@ -896,7 +904,7 @@ void QWidgetViewCmdExecutor::GetElementText(const ElementId& element, std::strin
             return;
         }
     }
-	
+
     QTableView *tableView = qobject_cast<QTableView*>(pElement);
     if (NULL != tableView) {
         QAbstractItemModel *model = tableView->model();
