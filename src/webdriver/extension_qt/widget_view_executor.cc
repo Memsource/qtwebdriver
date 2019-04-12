@@ -62,25 +62,9 @@
 #include <QtWidgets/QGraphicsItem>
 #include <QtWidgets/QGraphicsSimpleTextItem>
 #include <QtWidgets/QGraphicsTextItem>
-#if (QT_VERSION == QT_VERSION_CHECK(5, 9, 6))
-#include <QtGui/5.9.6/QtGui/qpa/qwindowsysteminterface.h>
-#elif (QT_VERSION == QT_VERSION_CHECK(5, 11, 1))
-#include <QtGui/5.11.1/QtGui/qpa/qwindowsysteminterface.h>
-#elif (QT_VERSION == QT_VERSION_CHECK(5, 11, 2))
-#include <QtGui/5.11.2/QtGui/qpa/qwindowsysteminterface.h>
-#elif (QT_VERSION == QT_VERSION_CHECK(5, 11, 3))
-#include <QtGui/5.11.3/QtGui/qpa/qwindowsysteminterface.h>
-#elif (QT_VERSION == QT_VERSION_CHECK(5, 12, 0))
-#include <QtGui/5.12.0/QtGui/qpa/qwindowsysteminterface.h>
-#elif (QT_VERSION == QT_VERSION_CHECK(5, 12, 1))
-#include <QtGui/5.12.1/QtGui/qpa/qwindowsysteminterface.h>
-#elif (QT_VERSION == QT_VERSION_CHECK(5, 12, 2))
-#include <QtGui/5.12.2/QtGui/qpa/qwindowsysteminterface.h>
-#elif (QT_VERSION == QT_VERSION_CHECK(5, 12, 3))
-#include <QtGui/5.12.3/QtGui/qpa/qwindowsysteminterface.h>
-#else
-#include <QtGui/5.13.0/QtGui/qpa/qwindowsysteminterface.h>
-#endif  
+
+#include <qpa/qwindowsysteminterface.h>
+
 #if (1 == WD_ENABLE_PLAYER)
 #include <QtMultimediaWidgets/QVideoWidget>
 #include <QtMultimedia/QMediaPlayer>

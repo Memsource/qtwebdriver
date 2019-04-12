@@ -1,3 +1,6 @@
+
+QT += gui-private
+
 HEADERS += \
 $$INC_DIR/extension_qt/q_session_lifecycle_actions.h \
 $$INC_DIR/extension_qt/q_view_executor.h \
