@@ -20,4 +20,5 @@ include(src/webdriver/extension_qt/extension_qt_base.pri)
 include(src/webdriver/extension_qt/extension_qt_quick.pri)
 
 win32:LIBS += Advapi32.lib Ws2_32.lib Ole32.lib
+win32:LIBS += User32.lib
 
