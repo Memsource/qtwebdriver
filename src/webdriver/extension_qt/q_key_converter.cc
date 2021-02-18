@@ -282,10 +282,10 @@ bool QKeyConverter::ConvertKeysToWebKeyEvents(const string16& client_keys,
 
             if (unmodified_text.empty() || modified_text.empty()) {
                 // Do a best effort and use the raw key we were given.
-                logger.Log(
-                    kWarningLogLevel,
-                    base::StringPrintf("No translation for key code. Code point: %d",
-                        static_cast<int>(key)));
+                // logger.Log(
+                //    kWarningLogLevel,
+                //    base::StringPrintf("No translation for key code. Code point: %d",
+                //        static_cast<int>(key)));
                 if (unmodified_text.empty())
                     unmodified_text = UTF16ToUTF8(keys.substr(i, 1));
                 if (modified_text.empty())
