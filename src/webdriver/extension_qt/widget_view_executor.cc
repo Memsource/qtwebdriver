@@ -843,10 +843,9 @@ void QWidgetViewCmdExecutor::GetElementText(const ElementId& element, std::strin
         }    
     }
 
-    QString textRepresentation;
-    if (QMetaObject::invokeMethod(pElement, "wdTextRepresentation", Qt::DirectConnection,
-                                  Q_RETURN_ARG(QString, textRepresentation)))
-    {
+    if (pElement->metaObject()->indexOfMethod( "wdTextRepresentation()" ) != -1 ) {
+        QString textRepresentation;
+        QMetaObject::invokeMethod(pElement, "wdTextRepresentation", Qt::DirectConnection, Q_RETURN_ARG(QString, textRepresentation));
         *element_text = textRepresentation.toStdString();
         return;
     }
